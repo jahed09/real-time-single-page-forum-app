@@ -19,7 +19,7 @@ class CreateRepliesTable extends Migration
             $table->text('body');
 
             $table->tinyInteger('user_id')->unsigned();
-            $table->tinyInteger('question_id')->unsigned();
+            $table->unsignedBigInteger('question_id')->unsigned();
 
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
 
